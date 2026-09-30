@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  faculty-placeholder.svg
+  ------------------------
+  Generic "headshot" graphic used for every faculty card on the page.
+  It is a simple bust-in-a-circle icon drawn in UNLV scarlet and gray,
+  not a photo of any real person. Swap it out per faculty member by:
+    1. Getting the real headshot from the department (jpg/png).
+    2. Saving it into this "images" folder, e.g. images/gewali.jpg
+    3. Changing that person's <img src="images/faculty-placeholder.svg">
+       in index.html to <img src="images/gewali.jpg">
+-->
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder faculty photo">
+  <!-- Background circle: light gray so the icon reads as a photo frame -->
+  <circle cx="100" cy="100" r="100" fill="#EAEAEA"/>
+
+  <!-- Head: simple circle in UNLV gray -->
+  <circle cx="100" cy="78" r="34" fill="#9FA1A4"/>
+
+  <!-- Shoulders/body: rounded shape in UNLV scarlet, clipped to the outer circle -->
+  <clipPath id="frame">
+    <circle cx="100" cy="100" r="100"/>
+  </clipPath>
+  <path d="M40 200 C40 150 66 128 100 128 C134 128 160 150 160 200 Z"
+        fill="#A03123" clip-path="url(#frame)"/>
+</svg>

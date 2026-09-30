@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page scale correctly on phones/tablets instead of showing a zoomed-out desktop layout -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNLV Computer Science &mdash; International Student Advising</title>
+  <!-- All visual styling lives in this separate file, as requested -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       SITE HEADER
+       A slim, sticky top bar so international students always know
+       what department/program this advising page belongs to and can
+       jump straight to the section they need.
+  ============================================================ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="header-eyebrow">Howard R. Hughes College of Engineering</p>
+      <h1 class="header-title">UNLV Computer Science</h1>
+      <p class="header-subtitle">Advising Guide for International Graduate Students</p>
+    </div>
+    <!-- In-page navigation: jump links to each section below -->
+    <nav class="header-nav" aria-label="Page sections">
+      <a href="#about">About the Department</a>
+      <a href="#history">Program History</a>
+      <a href="#faculty">Graduate Faculty</a>
+      <a href="#contact">Advising Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 1: DEPARTMENT INTRO
+         A short, plain-language description of the department so a
+         newly admitted international student understands where they
+         are landing before they read anything else.
+    ============================================================ -->
+    <section id="about" class="section section-intro">
+      <div class="content-width">
+        <h2>About the Department</h2>
+        <p>
+          The Department of Computer Science sits within the Howard R. Hughes
+          College of Engineering at the University of Nevada, Las Vegas. It is
+          one of the fastest-growing departments on campus, and computer
+          science students make up nearly half of the college's total
+          enrollment. The department is recognized nationally and
+          internationally for research in both theoretical and experimental
+          computer science &mdash; including algorithm design, information
+          retrieval, document analysis, computer graphics, computational
+          geometry, networking, and internet security.
+        </p>
+        <p>
+          For international students, the department offers a close-knit
+          academic community: small graduate seminars, faculty who are
+          active, funded researchers, and dedicated academic and research
+          laboratories that support both coursework and thesis or
+          dissertation work.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2: HISTORY OF THE GRADUATE PROGRAM
+         A vertical "timeline" list. A timeline layout is used here
+         because the content really is chronological (how the graduate
+         program grew over time) -- not decoration for decoration's sake.
+    ============================================================ -->
+    <section id="history" class="section section-history">
+      <div class="content-width">
+        <h2>How the Graduate Program Grew</h2>
+        <p>
+          The Master's and Ph.D. programs in Computer Science were built to
+          let students study specialized areas in depth while making
+          original research contributions. Over time, the graduate program
+          expanded from a small set of course offerings into a full research
+          program with its own laboratories, funded centers, and dedicated
+          graduate faculty.
+        </p>
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <h3>Early growth inside the College of Engineering</h3>
+            <p>
+              Computer Science began as part of UNLV's engineering programs
+              and grew quickly alongside the university itself, adding
+              dedicated faculty and its own graduate curriculum as demand for
+              trained computer scientists in Las Vegas and beyond increased.
+            </p>
+          </li>
+
+          <li class="timeline-item">
+            <h3>Establishing the M.S. and Ph.D. tracks</h3>
+            <p>
+              The department formalized graduate degrees leading to the M.S.
+              and Ph.D. in Computer Science, with thesis, project, and
+              course-only options for the master's degree so students could
+              tailor their path toward research, industry, or further
+              doctoral study.
+            </p>
+          </li>
+
+          <li class="timeline-item">
+            <h3>Building dedicated research infrastructure</h3>
+            <p>
+              As the faculty's funded research grew, the department stood up
+              in-house computer laboratories and research centers &mdash;
+              including the Center for Information Technology and Algorithms
+              (CITA) &mdash; giving graduate students hands-on access to
+              high-performance computing, GPU resources, and specialized
+              data sets for their research.
+            </p>
+          </li>
+
+          <li class="timeline-item">
+            <h3>A broader, more specialized graduate faculty</h3>
+            <p>
+              The graduate faculty expanded into new specialties &mdash;
+              cybersecurity, bioinformatics and machine learning, accessible
+              computing, blockchain, and human-computer interaction &mdash;
+              alongside the department's long-standing strengths in
+              algorithms, document analysis, and computational geometry.
+            </p>
+          </li>
+
+          <li class="timeline-item">
+            <h3>Today's program</h3>
+            <p>
+              The department now includes more than 25 faculty members and
+              offers interdisciplinary graduate options, such as the M.S. in
+              Data Analytics and dual degrees in Cybersecurity, alongside its
+              core M.S. and Ph.D. in Computer Science &mdash; continuing to
+              attract graduate students, including many international
+              students, from around the world.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3: GRADUATE FACULTY DIRECTORY
+         A responsive card grid. Each card holds a photo, name/title,
+         and a short synopsis of that faculty member's ongoing research
+         so students can quickly identify a potential advisor.
+    ============================================================ -->
+    <section id="faculty" class="section section-faculty">
+      <div class="content-width">
+        <h2>Graduate Faculty &amp; Research Areas</h2>
+        <p>
+          The list below highlights a sample of the department's graduate
+          faculty and the research each one is currently known for. Use it
+          as a starting point when looking for a potential thesis or
+          dissertation advisor &mdash; then reach out directly or through
+          your graduate advisor to discuss open positions in their lab.
+        </p>
+
+        <!-- Faculty grid: repeat this <article class="faculty-card"> block per person -->
+        <div class="faculty-grid">
+
+          <article class="faculty-card">
+            <img class="faculty-photo" src="lg.jpeg" alt="Portrait placeholder for Dr. Laxmi Gewali">
+            <h3 class="faculty-name">Dr. Laxmi Gewali</h3>
+            <p class="faculty-title">Professor &amp; Department Chair</p>
+            <p class="faculty-research">
+              Designs and analyzes efficient algorithms, with a focus on the
+              visibility properties of polygons, computational geometry, and
+              planning collision-free paths &mdash; work that has been
+              supported by NSF, the U.S. Department of Energy, and other
+              federal sponsors.
+            </p>
+          </article>
+
+          <article class="faculty-card">
+            <img class="faculty-photo" src="images/faculty-placeholder.svg" alt="Portrait placeholder for Dr. Wolfgang Bein">
+            <h3 class="faculty-name">Dr. Wolfgang Bein</h3>
+            <p class="faculty-title">Professor</p>
+            <p class="faculty-research">
+              Studies combinatorial optimization and online algorithms &mdash;
+              methods for making good decisions when information arrives
+              piece by piece &mdash; with applications ranging from resource
+              and facility planning to broader questions in theoretical
+              computer science.
+            </p>
+          </article>
+
+          <article class="faculty-card">
+            <img class="faculty-photo" src="DrTaghva_0.jpg" alt="Portrait placeholder for Dr. Kazem Taghva">
+            <h3 class="faculty-name">Dr. Kazem Taghva</h3>
+            <p class="faculty-title">Professor</p>
+            <p class="faculty-research">
+              Works on information retrieval from noisy, OCR-scanned text,
+              named-entity recognition, and database dependency theory; led
+              a decades-long, federally supported effort to build one of the
+              largest government document collections for legal discovery.
+            </p>
+          </article>
+
+          <article class="faculty-card">
+            <img class="faculty-photo" src="images/faculty-placeholder.svg" alt="Portrait placeholder for Dr. Andreas Stefik">
+            <h3 class="faculty-name">Dr. Andreas Stefik</h3>
+            <p class="faculty-title">Professor</p>
+            <p class="faculty-research">
+              Creator of Quorum, an evidence-based programming language
+              designed to be accessible to blind and visually impaired
+              learners; his lab studies programming-language usability,
+              software engineering, and computer science education.
+            </p>
+          </article>
+
+          <article class="faculty-card">
+            <img class="faculty-photo" src="images/faculty-placeholder.svg" alt="Portrait placeholder for Dr. Mingon Kang">
+            <h3 class="faculty-name">Dr. Mingon Kang</h3>
+            <p class="faculty-title">Associate Professor</p>
+            <p class="faculty-research">
+              Builds machine learning and deep learning methods for
+              bioinformatics and big data, including interpretable and
+              evidential deep learning models used to analyze genomic and
+              clinical data with medical research partners.
+            </p>
+          </article>
+
+          <article class="faculty-card">
+            <img class="faculty-photo" src="images/faculty-placeholder.svg" alt="Portrait placeholder for Dr. Yoohwan Kim">
+            <h3 class="faculty-name">Dr. Yoohwan Kim</h3>
+            <p class="faculty-title">Professor</p>
+            <p class="faculty-research">
+              Researches cybersecurity, blockchain, and cryptocurrency
+              systems, including secure data-management architectures for
+              Internet-of-Things devices built on private blockchain
+              networks.
+            </p>
+          </article>
+
+          <article class="faculty-card">
+            <img class="faculty-photo" src="images/faculty-placeholder.svg" alt="Portrait placeholder for Dr. Fatma Nasoz">
+            <h3 class="faculty-name">Dr. Fatma Nasoz</h3>
+            <p class="faculty-title">Professor</p>
+            <p class="faculty-research">
+              Works in human-computer interaction and affective computing,
+              including artificial intelligence systems that recognize
+              facial expressions and other signals to make computing more
+              responsive to users.
+            </p>
+          </article>
+
+          <article class="faculty-card">
+            <img class="faculty-photo" src="images/faculty-placeholder.svg" alt="Portrait placeholder for Dr. Ju-Yeon Jo">
+            <h3 class="faculty-name">Dr. Ju-Yeon Jo</h3>
+            <p class="faculty-title">Professor</p>
+            <p class="faculty-research">
+              Focuses on computer networks and cybersecurity, including
+              software-defined networking and decentralized systems built on
+              blockchain infrastructure.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- Note about the placeholder photos, shown to whoever edits/publishes this page -->
+        <p class="faculty-note">
+          Photos above are placeholders. Replace
+          <code>images/faculty-placeholder.svg</code> in each faculty card
+          with that person's official department photo before publishing.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4: ADVISING CONTACT / FOOTER
+    ============================================================ -->
+    <section id="contact" class="section section-contact">
+      <div class="content-width">
+        <h2>Questions About Your Program?</h2>
+        <p>
+          Speak with your graduate academic advisor or the Department of
+          Computer Science for help with admissions, degree requirements,
+          and connecting with a faculty advisor for your thesis or
+          dissertation.
+        </p>
+        <p class="contact-details">
+          Department of Computer Science &middot; University of Nevada, Las
+          Vegas &middot; 4505 S. Maryland Pkwy, Las Vegas, NV 89154
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; University of Nevada, Las Vegas &mdash; Department of Computer Science</p>
+  </footer>
+
+</body>
+</html>

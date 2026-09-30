@@ -1,0 +1,330 @@
+/* ==========================================================================
+   UNLV Computer Science — International Student Advising Page
+   Plain CSS, no framework. Organized top to bottom as:
+     1. Design tokens (colors, fonts, spacing) as CSS variables
+     2. Global resets / base element styles
+     3. Header + navigation
+     4. Shared section/content layout
+     5. History timeline
+     6. Faculty card grid
+     7. Contact section + footer
+     8. Responsive adjustments for small screens
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS
+   UNLV's official brand colors (scarlet + gray) as CSS variables, so the
+   whole page's palette can be adjusted in one place. Values come from
+   UNLV's published brand guidelines (unlv.edu/brand/colors).
+-------------------------------------------------------------------------- */
+:root {
+  /* UNLV brand colors */
+  --unlv-scarlet:      #E31837; /* primary accent: headings, links, buttons */
+  --unlv-scarlet-dark:  #A03123; /* hover states, header background */
+  --unlv-gray:          #9FA1A4; /* secondary accents, muted labels */
+  --unlv-gray-dark:     #6A737B; /* body text on light backgrounds */
+
+  /* Neutrals used for backgrounds/text (kept high-contrast for readability) */
+  --ink:                #231F20; /* near-black for body copy */
+  --page-bg:            #FFFFFF;
+  --panel-bg:           #F6F6F5; /* light gray section background */
+  --border-soft:        #E1E1E0;
+
+  /* Typography: one serif family for headings (gives the page a settled,
+     academic feel) and one sans-serif for body copy (stays easy to read
+     at small sizes, including for readers who are not native English
+     speakers). Both are common system fonts, so no external font files
+     or network requests are required. */
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  /* Spacing scale, reused across sections for consistent rhythm */
+  --space-sm: 0.75rem;
+  --space-md: 1.5rem;
+  --space-lg: 3rem;
+  --space-xl: 4.5rem;
+
+  /* Shared content width so lines of text stay comfortable to read */
+  --content-max: 880px;
+}
+
+/* --------------------------------------------------------------------------
+   2. GLOBAL RESETS / BASE STYLES
+-------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box; /* padding/border no longer add to declared width */
+}
+
+html {
+  scroll-behavior: smooth; /* smooth jumps when clicking the nav links */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;   /* slightly larger than default for readability */
+  line-height: 1.65;      /* generous line-height, easier for long-form reading */
+  color: var(--ink);
+  background-color: var(--page-bg);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 var(--space-sm) 0;
+  color: var(--ink);
+}
+
+h2 {
+  font-size: 1.9rem;
+  color: var(--unlv-scarlet-dark);
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin: 0 0 var(--space-md) 0;
+}
+
+a {
+  color: var(--unlv-scarlet-dark);
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: var(--unlv-scarlet);
+}
+
+/* Keep a visible focus ring for keyboard users navigating the page */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--unlv-scarlet);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   3. HEADER + NAVIGATION
+-------------------------------------------------------------------------- */
+.site-header {
+  background-color: var(--unlv-scarlet-dark);
+  color: #FFFFFF;
+  padding: var(--space-lg) var(--space-md) 0;
+}
+
+.header-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header-eyebrow {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: 0.95rem;
+  color: #F1C3CA; /* lightened scarlet tint for contrast on dark red */
+}
+
+.header-title {
+  color: #FFFFFF;
+  font-size: 2.4rem;
+  margin-bottom: var(--space-sm);
+}
+
+.header-subtitle {
+  font-size: 1.15rem;
+  color: #FDEDEF;
+  margin-bottom: var(--space-lg);
+}
+
+/* In-page navigation bar sits directly under the title, sticky so it is
+   reachable from anywhere on the page */
+.header-nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  background-color: var(--unlv-scarlet);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.header-nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.header-nav a:hover,
+.header-nav a:focus {
+  border-bottom-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   4. SHARED SECTION / CONTENT LAYOUT
+-------------------------------------------------------------------------- */
+.section {
+  padding: var(--space-xl) var(--space-md);
+}
+
+/* Alternate a very light gray background so sections are easy to tell apart
+   without needing heavy borders or shadows */
+.section-history,
+.section-contact {
+  background-color: var(--panel-bg);
+}
+
+.content-width {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   5. HISTORY TIMELINE
+   A vertical list with a scarlet rule and dot markers, used because the
+   program's history really is a sequence of stages over time.
+-------------------------------------------------------------------------- */
+.timeline {
+  list-style: none;
+  margin: var(--space-lg) 0 0 0;
+  padding: 0;
+  border-left: 3px solid var(--unlv-gray);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 var(--space-lg) var(--space-lg);
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Small scarlet dot marking each stage along the vertical line */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--unlv-scarlet);
+  border: 2px solid #FFFFFF;
+}
+
+.timeline-item h3 {
+  color: var(--unlv-scarlet-dark);
+  margin-bottom: 0.4rem;
+}
+
+.timeline-item p {
+  margin-bottom: 0;
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   6. FACULTY CARD GRID
+-------------------------------------------------------------------------- */
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* three cards per row on desktop */
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.faculty-card {
+  background-color: var(--page-bg);
+  border: 1px solid var(--border-soft);
+  border-top: 4px solid var(--unlv-scarlet); /* single accent stripe per card */
+  border-radius: 4px;
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.faculty-photo {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;      /* circular photo frame */
+  object-fit: cover;
+  margin-bottom: var(--space-sm);
+  border: 2px solid var(--unlv-gray);
+}
+
+.faculty-name {
+  margin-bottom: 0.15rem;
+}
+
+.faculty-title {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--unlv-gray-dark);
+}
+
+.faculty-research {
+  text-align: left;
+  font-size: 0.98rem;
+  margin-bottom: 0;
+}
+
+.faculty-note {
+  margin-top: var(--space-lg);
+  font-size: 0.9rem;
+  color: var(--unlv-gray-dark);
+}
+
+.faculty-note code {
+  background-color: var(--panel-bg);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   7. CONTACT SECTION + FOOTER
+-------------------------------------------------------------------------- */
+.contact-details {
+  font-weight: 600;
+  color: var(--unlv-scarlet-dark);
+}
+
+.site-footer {
+  background-color: var(--ink);
+  color: #FFFFFF;
+  text-align: center;
+  padding: var(--space-md);
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. RESPONSIVE ADJUSTMENTS
+   Collapse the faculty grid down as the viewport narrows, and shrink the
+   header type slightly so it does not overwhelm small phone screens.
+-------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .faculty-grid {
+    grid-template-columns: repeat(2, 1fr); /* two cards per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .faculty-grid {
+    grid-template-columns: 1fr; /* one card per row on phones */
+  }
+
+  .header-title {
+    font-size: 1.8rem;
+  }
+
+  .header-nav {
+    gap: var(--space-md);
+  }
+}
